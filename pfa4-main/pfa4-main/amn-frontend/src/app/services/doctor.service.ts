@@ -9,7 +9,7 @@ export class DoctorService {
 
   private getJwt(): string | null {
     return typeof window !== 'undefined' && localStorage
-      ? localStorage.getItem('jwt')
+      ? localStorage.getItem('auth_token')
       : null;
   }
 

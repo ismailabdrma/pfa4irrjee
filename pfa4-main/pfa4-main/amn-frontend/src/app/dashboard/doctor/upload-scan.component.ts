@@ -38,7 +38,7 @@ export class UploadScanComponent {
     };
 
     const folderId = this.scanForm.value.folderId;
-    const token = localStorage.getItem('jwt') || '';
+    const token = localStorage.getItem('auth_token') || '';
 
     this.http.post(`http://localhost:8080/api/doctor/upload-scan?folderId=${folderId}`, payload, {
       headers: new HttpHeaders({ 'Authorization': `Bearer ${token}` })

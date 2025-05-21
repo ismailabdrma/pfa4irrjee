@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { DoctorService } from 'src/app/services/doctor.service';
@@ -72,6 +72,21 @@ export class DoctorComponent implements OnInit {
               private location: Location) {}
 
   ngOnInit(): void {
+    // First check authentication
+    if (!this.authService.isLoggedIn()) {
+      this.router.navigate(['/login']);
+      return;
+    }
+
+    // Then verify role
+    const user = this.authService.getCurrentUser();
+    if (user?.role !== 'DOCTOR') {
+      this.authService.logout();
+      this.router.navigate(['/login']);
+      return;
+    }
+
+    // Only then load profile
     this.loadDoctorProfile();
   }
 
