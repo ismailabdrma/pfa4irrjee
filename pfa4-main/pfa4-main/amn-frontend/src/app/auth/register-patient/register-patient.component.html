@@ -1,0 +1,159 @@
+<!-- register-patient.component.html -->
+<div class="register-container">
+  <div class="register-card" @fadeIn>
+    <div class="register-header">
+      <h2>Patient Registration</h2>
+      <p>Create your patient account to access medical services</p>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="fullName">Full Name <span class="required">*</span></label>
+          <input
+            id="fullName"
+            formControlName="fullName"
+            type="text"
+            placeholder="Enter your full name"
+            [ngClass]="{'is-invalid': registerForm.get('fullName')?.invalid && registerForm.get('fullName')?.touched}"
+          />
+          <div class="error-message" *ngIf="registerForm.get('fullName')?.touched && registerForm.get('fullName')?.invalid">
+            Full name is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input
+            id="email"
+            formControlName="email"
+            type="email"
+            placeholder="Enter your email"
+            [ngClass]="{'is-invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}"
+          />
+          <div class="error-message" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+            Valid email is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password <span class="required">*</span></label>
+          <input
+            id="password"
+            formControlName="password"
+            type="password"
+            placeholder="Create a password"
+            [ngClass]="{'is-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}"
+          />
+          <div class="error-message" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+            Password must be at least 6 characters.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone <span class="required">*</span></label>
+          <input
+            id="phone"
+            formControlName="phone"
+            type="text"
+            placeholder="Enter your phone number"
+            [ngClass]="{'is-invalid': registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched}"
+          />
+          <div class="error-message" *ngIf="registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid">
+            Phone number is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cin">CIN <span class="required">*</span></label>
+          <input
+            id="cin"
+            formControlName="cin"
+            type="text"
+            placeholder="Enter your CIN"
+            [ngClass]="{'is-invalid': registerForm.get('cin')?.invalid && registerForm.get('cin')?.touched}"
+          />
+          <div class="error-message" *ngIf="registerForm.get('cin')?.touched && registerForm.get('cin')?.invalid">
+            CIN is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="birthDate">Birth Date <span class="required">*</span></label>
+          <input
+            id="birthDate"
+            formControlName="birthDate"
+            type="date"
+            [ngClass]="{'is-invalid': registerForm.get('birthDate')?.invalid && registerForm.get('birthDate')?.touched}"
+          />
+          <div class="error-message" *ngIf="registerForm.get('birthDate')?.touched && registerForm.get('birthDate')?.invalid">
+            Birth date is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="bloodType">Blood Type <span class="required">*</span></label>
+          <select
+            id="bloodType"
+            formControlName="bloodType"
+            [ngClass]="{'is-invalid': registerForm.get('bloodType')?.invalid && registerForm.get('bloodType')?.touched}"
+          >
+            <option value="">Select blood type</option>
+            <option *ngFor="let type of bloodTypes" [value]="type">{{ type }}</option>
+          </select>
+          <div class="error-message" *ngIf="registerForm.get('bloodType')?.touched && registerForm.get('bloodType')?.invalid">
+            Blood type is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="emergencyContact">Emergency Contact <span class="required">*</span></label>
+          <input
+            id="emergencyContact"
+            formControlName="emergencyContact"
+            type="text"
+            placeholder="Emergency contact number"
+            [ngClass]="{'is-invalid': registerForm.get('emergencyContact')?.invalid && registerForm.get('emergencyContact')?.touched}"
+          />
+          <div class="error-message" *ngIf="registerForm.get('emergencyContact')?.touched && registerForm.get('emergencyContact')?.invalid">
+            Emergency contact is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="allergies">Allergies</label>
+        <input id="allergies" formControlName="allergies" type="text" placeholder="List any allergies (optional)" />
+      </div>
+
+      <div class="form-group">
+        <label for="chronicDiseases">Chronic Diseases</label>
+        <input id="chronicDiseases" formControlName="chronicDiseases" type="text" placeholder="List any chronic diseases (optional)" />
+      </div>
+
+      <div class="form-checkboxes">
+        <div class="form-checkbox">
+          <input id="hasHeartProblem" formControlName="hasHeartProblem" type="checkbox" />
+          <label for="hasHeartProblem">I have a heart condition</label>
+        </div>
+
+        <div class="form-checkbox">
+          <input id="hasSurgery" formControlName="hasSurgery" type="checkbox" />
+          <label for="hasSurgery">I have had surgery before</label>
+        </div>
+      </div>
+
+      <div class="error-message register-error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <button type="submit" class="btn-primary" [disabled]="registerForm.invalid || isSubmitting">
+        <span *ngIf="!isSubmitting">Register</span>
+        <span *ngIf="isSubmitting">Registering...</span>
+      </button>
+    </form>
+
+    <div class="register-footer">
+      <p>Already have an account? <a routerLink="/login">Login now</a></p>
+      <a routerLink="/auth-choice" class="back-link">← Back to authentication options</a>
+    </div>
+  </div>
+</div>

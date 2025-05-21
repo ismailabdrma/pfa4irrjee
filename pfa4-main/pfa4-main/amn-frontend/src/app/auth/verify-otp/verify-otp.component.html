@@ -1,0 +1,59 @@
+<!-- src/app/auth/verify-otp/verify-otp.component.html -->
+<div class="otp-container">
+  <div class="otp-card">
+    <div class="otp-header">
+      <h2>Verify Your Identity</h2>
+      <p>Enter the OTP code sent to your email</p>
+    </div>
+
+    <form [formGroup]="otpForm" (ngSubmit)="onSubmit()" class="otp-form">
+      <div class="email-display" *ngIf="email">
+        <p>Code sent to: <strong>{{ email }}</strong></p>
+      </div>
+
+      <div class="form-group">
+        <label for="otpCode">OTP Code</label>
+        <input
+          id="otpCode"
+          formControlName="otpCode"
+          type="text"
+          placeholder="Enter 6-digit OTP code"
+          maxlength="6"
+          class="form-control"
+        />
+        <div class="validation-message" *ngIf="otpForm.get('otpCode')?.invalid && otpForm.get('otpCode')?.touched">
+          Please enter a valid 6-digit OTP code.
+        </div>
+      </div>
+
+      <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <!-- Debug info -->
+      <div class="debug-info" *ngIf="debugInfo">
+        <p><strong>Debug Info:</strong></p>
+        <pre>{{ debugInfo }}</pre>
+      </div>
+
+      <button type="submit" class="btn-primary" [disabled]="otpForm.invalid || isSubmitting">
+        <span *ngIf="!isSubmitting">Verify OTP</span>
+        <span *ngIf="isSubmitting">Verifying...</span>
+      </button>
+
+      <div class="resend-container">
+        <p>Didn't receive the code?</p>
+        <button type="button" class="btn-link" (click)="resendOtp()">Resend OTP Code</button>
+      </div>
+
+      <!-- Manual navigation button for testing -->
+      <div class="manual-nav">
+        <button type="button" class="btn-secondary" (click)="goToDashboard()">
+          Manual Dashboard Navigation (Testing)
+        </button>
+      </div>
+    </form>
+
+    <div class="otp-footer">
+      <a routerLink="/login" class="back-link">← Back to login</a>
+    </div>
+  </div>
+</div>

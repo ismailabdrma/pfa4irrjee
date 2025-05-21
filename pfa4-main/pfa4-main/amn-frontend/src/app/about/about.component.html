@@ -1,0 +1,124 @@
+&lt;!-- Hero Section -->
+<section class="about-hero">
+  <div class="container">
+    <div class="about-hero-content">
+      <h1>About AMN Medical Records</h1>
+      <p>Transforming healthcare through secure, accessible medical record management</p>
+    </div>
+  </div>
+</section>
+
+&lt;!-- Our Story Section -->
+<section class="section our-story">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Story</h2>
+    </div>
+
+    <div class="story-content">
+      <div class="story-image">
+        <img src="assets/images/about-story.jpg" alt="Our Story" />
+      </div>
+      <div class="story-text">
+        <h3>Revolutionizing Medical Record Management</h3>
+        <p>
+          AMN Medical Records was founded in 2020 with a clear mission: to solve the fragmentation and inefficiency in medical record management that has plagued healthcare for decades.
+        </p>
+        <p>
+          Our team of healthcare professionals and technology experts came together with a shared vision of creating a system that would seamlessly connect patients, doctors, and pharmacists while maintaining the highest standards of security and privacy.
+        </p>
+        <p>
+          Today, AMN Medical Records serves thousands of healthcare providers and patients, providing a comprehensive platform that improves care coordination, reduces errors, and empowers patients to take control of their health information.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+&lt;!-- Mission & Values Section -->
+<section class="section mission-values">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Mission & Values</h2>
+    </div>
+
+    <div class="mission-box">
+      <h3>Our Mission</h3>
+      <p>
+        To transform healthcare delivery by providing a secure, accessible, and comprehensive medical record system that connects all stakeholders in the healthcare ecosystem.
+      </p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>Patient-Centered</h3>
+        <p>We design our solutions with patients at the center, ensuring their needs and privacy are always prioritized.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Security & Privacy</h3>
+        <p>We maintain the highest standards of data security and privacy protection in everything we do.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Innovation</h3>
+        <p>We continuously innovate to improve healthcare delivery and patient outcomes.</p>
+      </div>
+
+      <div class="value-card">
+        <h3>Collaboration</h3>
+        <p>We believe in the power of collaboration between all healthcare stakeholders.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+&lt;!-- Team Section -->
+<section class="section team-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Leadership Team</h2>
+      <p>Meet the experts behind AMN Medical Records</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card" *ngFor="let member of team">
+        <div class="team-image">
+          <img [src]="member.image" [alt]="member.name" />
+        </div>
+        <div class="team-info">
+          <h3>{{ member.name }}</h3>
+          <p class="team-role">{{ member.role }}</p>
+          <p class="team-bio">{{ member.bio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+&lt;!-- Stats Section -->
+<section class="section stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number">5,000+</div>
+        <div class="stat-label">Healthcare Providers</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">1M+</div>
+        <div class="stat-label">Patient Records</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">99.9%</div>
+        <div class="stat-label">Uptime</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">HIPAA Compliant</div>
+      </div>
+    </div>
+  </div>
+</section>

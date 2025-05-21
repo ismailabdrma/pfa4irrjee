@@ -1,0 +1,27 @@
+/* prescription-detail.component.css */
+
+/* Basic styling for the component */
+:host {
+  display: block;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  :host {
+    padding: 0.75rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
+}

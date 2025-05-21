@@ -1,0 +1,145 @@
+/* select-role.component.css */
+.select-role-container {
+  min-height: calc(100vh - 140px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+.select-role-content {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.select-role-content h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #0056b3;
+}
+
+.select-role-content > p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #666;
+}
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.role-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+.role-card:hover {
+  transform: translateY(-10px);
+}
+
+.role-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.role-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #0056b3;
+}
+
+.role-card p {
+  color: #666;
+  margin-bottom: 25px;
+  min-height: 80px;
+}
+
+.role-card .btn-primary {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #0056b3;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.role-card .btn-primary:hover {
+  background-color: #003d82;
+  transform: translateY(-3px);
+}
+
+.back-link {
+  text-align: center;
+}
+
+.back-link a {
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.back-link a:hover {
+  color: #003d82;
+  text-decoration: underline;
+}
+
+/* Color classes */
+.bg-blue-50 {
+  background-color: #e6f7ff;
+}
+
+.border-blue-200 {
+  border-color: #b3e0ff;
+}
+
+.bg-green-50 {
+  background-color: #e6fff0;
+}
+
+.border-green-200 {
+  border-color: #b3ffcc;
+}
+
+.bg-purple-50 {
+  background-color: #f5e6ff;
+}
+
+.border-purple-200 {
+  border-color: #d9b3ff;
+}
+
+.bg-amber-50 {
+  background-color: #fff8e6;
+}
+
+.border-amber-200 {
+  border-color: #ffe0b3;
+}
+
+@media (max-width: 768px) {
+  .roles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .select-role-content h1 {
+    font-size: 2rem;
+  }
+
+  .role-card p {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,108 @@
+&lt;!-- Hero Section -->
+<section class="services-hero">
+  <div class="container">
+    <div class="services-hero-content">
+      <h1>Our Services</h1>
+      <p>Comprehensive solutions for modern healthcare management</p>
+    </div>
+  </div>
+</section>
+
+&lt;!-- Services Overview Section -->
+<section class="section services-overview">
+  <div class="container">
+    <div class="section-title">
+      <h2>What We Offer</h2>
+      <p>Integrated solutions for healthcare providers and patients</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="service-icon">{{ service.icon }}</div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <ul class="service-features">
+          <li *ngFor="let feature of service.features">{{ feature }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+&lt;!-- Benefits Section -->
+<section class="section benefits-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Benefits</h2>
+      <p>Why choose AMN Medical Records</p>
+    </div>
+
+    <div class="benefits-content">
+      <div class="benefits-image">
+        <img src="assets/images/benefits.jpg" alt="Benefits of AMN Medical Records" />
+      </div>
+
+      <div class="benefits-list">
+        <div class="benefit-item">
+          <h3>Improved Patient Care</h3>
+          <p>Access to comprehensive medical history leads to better clinical decisions and improved patient outcomes.</p>
+        </div>
+
+        <div class="benefit-item">
+          <h3>Enhanced Efficiency</h3>
+          <p>Streamlined workflows reduce administrative burden and allow healthcare providers to focus more on patient care.</p>
+        </div>
+
+        <div class="benefit-item">
+          <h3>Reduced Errors</h3>
+          <p>Digital records and automated checks help prevent medication errors and improve patient safety.</p>
+        </div>
+
+        <div class="benefit-item">
+          <h3>Better Coordination</h3>
+          <p>Seamless information sharing between healthcare providers ensures coordinated care delivery.</p>
+        </div>
+
+        <div class="benefit-item">
+          <h3>Data-Driven Insights</h3>
+          <p>Analytics capabilities provide valuable insights for improving clinical practices and patient outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+&lt;!-- FAQ Section -->
+<section class="section faq-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Frequently Asked Questions</h2>
+      <p>Common questions about our services</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+        <div class="faq-question">
+          <h3>{{ faq.question }}</h3>
+        </div>
+        <div class="faq-answer">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+&lt;!-- CTA Section -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Transform Your Medical Record Management?</h2>
+      <p>Join thousands of healthcare professionals using AMN Medical Records</p>
+      <div class="cta-buttons">
+        <a routerLink="/register" class="btn btn-primary">Get Started</a>
+        <a routerLink="/contact" class="btn btn-outline">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>

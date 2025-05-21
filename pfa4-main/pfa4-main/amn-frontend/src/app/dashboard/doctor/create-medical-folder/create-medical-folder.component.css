@@ -1,0 +1,162 @@
+/* create-medical-folder.component.css */
+
+/* Main container */
+.container {
+  width: 100%;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+/* Heading */
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Form */
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+/* Form fields */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: border-color 0.15s ease-in-out;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+textarea.input {
+  resize: vertical;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #4338ca;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.5);
+}
+
+.btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  background-color: #6b7280;
+}
+
+.w-full {
+  width: 100%;
+}
+
+/* Messages */
+.text-green-600 {
+  color: #059669;
+}
+
+.text-red-600 {
+  color: #dc2626;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .p-6 {
+    padding: 1rem;
+  }
+
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+}
+
+/* Form validation styles */
+.ng-touched.ng-invalid {
+  border-color: #ef4444;
+}
+
+.ng-touched.ng-invalid:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Animation for success message */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.text-green-600, .text-red-600 {
+  animation: fadeIn 0.3s ease-in-out;
+}

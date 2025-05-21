@@ -1,0 +1,59 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-brand">
+      <a routerLink="/">
+        <h1>AMN Medical</h1>
+      </a>
+    </div>
+
+    <button class="mobile-menu-btn" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="navbar-menu" [class.active]="isMenuOpen">
+      <ul class="navbar-nav">
+        <!-- Always show these links -->
+        <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+
+        <!-- Only show services/contact to non-logged in users -->
+        <li *ngIf="!authService.isLoggedIn()">
+          <a routerLink="/services" routerLinkActive="active">Services</a>
+        </li>
+        <li *ngIf="!authService.isLoggedIn()">
+          <a routerLink="/contact" routerLinkActive="active">Contact</a>
+        </li>
+
+        <!-- Dashboard link for logged in users -->
+        <li *ngIf="authService.isLoggedIn()">
+          <a [routerLink]="authService.getDashboardRoute()" routerLinkActive="active">Dashboard</a>
+        </li>
+
+        <!-- Admin specific links -->
+        <li *ngIf="authService.isLoggedIn() && authService.getCurrentUser()?.role === 'ADMIN'">
+          <a routerLink="/admin" routerLinkActive="active">Admin Panel</a>
+        </li>
+      </ul>
+
+      <div class="navbar-buttons">
+        <!-- For non-logged in users -->
+        <ng-container *ngIf="!authService.isLoggedIn()">
+          <a routerLink="/login" class="btn-secondary">Login</a>
+          <a routerLink="/select-role" class="btn-primary">Register</a>
+        </ng-container>
+
+        <!-- For logged in users -->
+        <ng-container *ngIf="authService.isLoggedIn()">
+          <button (click)="goBack()" class="btn-secondary">
+            <i class="fas fa-arrow-left"></i> Back
+          </button>
+          <button (click)="logout()" class="btn-primary logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</nav>

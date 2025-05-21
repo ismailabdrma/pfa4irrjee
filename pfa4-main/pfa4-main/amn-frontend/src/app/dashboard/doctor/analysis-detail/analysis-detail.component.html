@@ -1,0 +1,14 @@
+<div class="p-6 space-y-4" *ngIf="analysis">
+  <h1 class="text-2xl font-bold">Détails de l'Analyse</h1>
+
+  <div class="bg-white rounded shadow p-4">
+    <p><strong>Titre:</strong> {{ analysis.title }}</p>
+    <p><strong>Description:</strong> {{ analysis.description }}</p>
+    <p><strong>Date:</strong> {{ analysis.uploadDate }}</p>
+    <p><strong>Type de fichier:</strong> {{ analysis.fileType }}</p>
+
+    <div *ngIf="analysis.url" class="mt-4">
+      <img [src]="analysis.url" alt="Analyse" class="max-w-full h-auto border rounded" />
+    </div>
+  </div>
+</div>

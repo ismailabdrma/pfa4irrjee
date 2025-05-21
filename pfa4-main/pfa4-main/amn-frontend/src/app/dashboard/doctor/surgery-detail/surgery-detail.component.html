@@ -1,0 +1,14 @@
+<div class="p-6 space-y-4" *ngIf="surgery">
+  <h1 class="text-2xl font-bold">Détails de la Chirurgie</h1>
+
+  <div class="bg-white rounded shadow p-4">
+    <p><strong>Titre:</strong> {{ surgery.title }}</p>
+    <p><strong>Description:</strong> {{ surgery.description }}</p>
+    <p><strong>Date:</strong> {{ surgery.uploadDate }}</p>
+    <p><strong>Type de fichier:</strong> {{ surgery.fileType }}</p>
+
+    <div *ngIf="surgery.url" class="mt-4">
+      <img [src]="surgery.url" alt="Chirurgie" class="max-w-full h-auto border rounded" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,122 @@
+/* surgery-detail.component.css */
+
+/* Main container */
+.p-6 {
+  padding: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+/* Heading */
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+h1 {
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+/* Content section */
+.bg-white {
+  background-color: white;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.shadow {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+/* Text styling */
+p {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+p:last-of-type {
+  margin-bottom: 1rem;
+}
+
+strong {
+  font-weight: 600;
+  color: #1f2937;
+  margin-right: 0.25rem;
+}
+
+/* Image container */
+.mt-4 {
+  margin-top: 1rem;
+}
+
+/* Image styling */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.border {
+  border-width: 1px;
+  border-color: #e5e7eb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .p-6 {
+    padding: 1rem;
+  }
+
+  .p-4 {
+    padding: 0.75rem;
+  }
+
+  .text-2xl {
+    font-size: 1.25rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .p-6 {
+    padding: 0;
+  }
+
+  .bg-white {
+    box-shadow: none;
+  }
+
+  body {
+    color: black;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+}

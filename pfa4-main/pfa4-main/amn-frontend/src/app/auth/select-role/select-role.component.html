@@ -1,0 +1,20 @@
+<!-- select-role.component.html -->
+<div class="select-role-container">
+  <div class="select-role-content">
+    <h1 @fadeIn>Select Your Role</h1>
+    <p @fadeIn>Choose the role that best describes you to create an appropriate account</p>
+
+    <div class="roles-grid" @fadeIn>
+      <div *ngFor="let role of roles" class="role-card" [ngClass]="role.color">
+        <div class="role-icon">{{ role.icon }}</div>
+        <h3>{{ role.title }}</h3>
+        <p>{{ role.description }}</p>
+        <a [routerLink]="role.path" [queryParams]="role.queryParams" class="btn-primary">Continue as {{ role.title }}</a>
+      </div>
+    </div>
+
+    <div class="back-link" @fadeIn>
+      <a routerLink="/auth-choice">← Back to authentication options</a>
+    </div>
+  </div>
+</div>

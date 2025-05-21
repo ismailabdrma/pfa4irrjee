@@ -1,0 +1,68 @@
+<!-- src/app/auth/login/login.component.html -->
+<div class="login-container">
+  <div class="login-card" @fadeIn>
+    <div class="login-header">
+      <h2>Login to Your {{ getUserTypeTitle() }} Account</h2>
+      <p>Enter your credentials to access your dashboard</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          formControlName="email"
+          type="email"
+          placeholder="Enter your email"
+          class="form-control"
+          [ngClass]="{'is-invalid': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}"
+        />
+        <div class="error-message" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          Please enter a valid email address.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          formControlName="password"
+          type="password"
+          placeholder="Enter your password"
+          class="form-control"
+          [ngClass]="{'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}"
+        />
+        <div class="error-message" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          Password is required.
+        </div>
+      </div>
+
+      <div class="form-options">
+        <div class="remember-me">
+          <input type="checkbox" id="remember" />
+          <label for="remember">Remember me</label>
+        </div>
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+
+      <div class="error-message login-error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <button type="submit" class="btn-primary" [disabled]="loginForm.invalid || isSubmitting">
+        <span *ngIf="!isSubmitting">Login</span>
+        <span *ngIf="isSubmitting">Logging in...</span>
+      </button>
+
+      <!-- Temporary button for direct OTP navigation -->
+      <div class="mt-3 text-center">
+        <button type="button" class="btn-link" (click)="goToOtpManually()">
+          Go to OTP Verification Page
+        </button>
+      </div>
+    </form>
+
+    <div class="login-footer">
+      <p>Don't have an account? <a routerLink="/select-role">Register now</a></p>
+      <a routerLink="/auth-choice" class="back-link">← Back to authentication options</a>
+    </div>
+  </div>
+</div>

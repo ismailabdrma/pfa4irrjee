@@ -1,0 +1,110 @@
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Advanced Medical Records Management</h1>
+      <p>Streamline healthcare delivery with our secure, comprehensive medical record system designed for doctors, pharmacists, and patients.</p>
+      <div class="hero-buttons">
+        <a routerLink="/register" class="btn btn-primary">Get Started</a>
+        <a routerLink="/about" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/images/hero-medical.svg" alt="Medical Records System" />
+    </div>
+  </div>
+</section>
+
+
+<section class="section features-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Features</h2>
+      <p>Comprehensive tools for modern healthcare management</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section how-it-works">
+  <div class="container">
+    <div class="section-title">
+      <h2>How It Works</h2>
+      <p>Simple, secure, and efficient medical record management</p>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Create an Account</h3>
+          <p>Register as a doctor, pharmacist, or patient and verify your identity.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Access Medical Records</h3>
+          <p>Securely access and manage patient medical information with proper authorization.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Collaborate Seamlessly</h3>
+          <p>Share information between healthcare providers for coordinated patient care.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Improve Patient Outcomes</h3>
+          <p>Make better clinical decisions with comprehensive medical history at your fingertips.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section testimonials-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>What Our Users Say</h2>
+      <p>Trusted by healthcare professionals and patients</p>
+    </div>
+
+    <div class="testimonials">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <div class="quote-icon">"</div>
+        <p class="testimonial-text">{{ testimonial.quote }}</p>
+        <div class="testimonial-author">
+          <h4>{{ testimonial.name }}</h4>
+          <p>{{ testimonial.role }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Transform Your Medical Record Management?</h2>
+      <p>Join thousands of healthcare professionals using AMN Medical Records</p>
+      <a routerLink="/register" class="btn btn-primary">Get Started Today</a>
+    </div>
+  </div>
+</section>

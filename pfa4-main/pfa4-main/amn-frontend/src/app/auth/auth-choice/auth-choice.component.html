@@ -1,0 +1,37 @@
+<!-- auth-choice.component.html -->
+<div class="auth-choice-container">
+  <div class="auth-choice-content">
+    <h1 @fadeIn>Welcome to AMN Medical</h1>
+    <p @fadeIn>Please select how you would like to proceed</p>
+
+    <div class="auth-options">
+      <div class="auth-option" @fadeIn>
+        <h2>I already have an account</h2>
+        <p>Sign in to access your dashboard and medical information</p>
+        <a routerLink="/login" class="btn-primary">Login</a>
+      </div>
+
+      <div class="auth-option" @fadeIn>
+        <h2>I need to create an account</h2>
+        <p>Register as a new user to start using our medical platform</p>
+        <a routerLink="/select-role" class="btn-primary">Register</a>
+      </div>
+    </div>
+
+    <div class="auth-divider" @fadeIn>
+      <span>or select your user type</span>
+    </div>
+
+    <div class="user-types-grid" @fadeIn>
+      <div *ngFor="let userType of userTypes" class="user-type-card" [ngClass]="userType.color">
+        <div class="user-type-icon">{{ userType.icon }}</div>
+        <h3>{{ userType.title }}</h3>
+        <p>{{ userType.description }}</p>
+        <div class="user-type-actions">
+          <a [routerLink]="'/login'" [queryParams]="{type: userType.type}" class="btn-secondary">Login</a>
+          <a [routerLink]="userType.registerPath" [queryParams]="{type: userType.type}" class="btn-primary">Register</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
